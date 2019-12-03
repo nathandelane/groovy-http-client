@@ -1,5 +1,6 @@
 package org.github.nathandelane.http
 
+import javax.net.ssl.HttpsURLConnection
 import org.github.nathandelane.http.HttpRequest
 import org.github.nathandelane.http.HttpResponse
 
@@ -11,7 +12,15 @@ class HttpWebClient {
 		request.with {
 			def strUrl = new StringBuilder(baseUrl).append((port ? ":${port}" : "")).append(path)
 			def url = new URL("${strUrl}")
-			def connection = (HttpURLConnection) url.openConnection()
+			def connection = null
+			
+			if (strUrl.startsWithAny("https")) {
+				connection = (HttpsURLConnection) url.openConnection()
+			}
+			else {
+				connection = (HttpURLConnection) url.openConnection()
+			}
+			
 			connection.setRequestMethod httpMethod
 			connection.setConnectTimeout connectTimeout
 			connection.setReadTimeout readTimeout
