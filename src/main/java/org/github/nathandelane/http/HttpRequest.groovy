@@ -9,7 +9,7 @@ class HttpRequest {
 
 	String baseUrl
 
-	int port
+	Integer port
 
 	String path
 

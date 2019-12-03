@@ -6,6 +6,8 @@ import groovy.transform.ToString
 class HttpResponse {
 
 	int httpResponseCode
+	
+	String responseMessage
 
 	String responseBody
 

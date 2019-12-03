@@ -6,8 +6,11 @@ import org.github.nathandelane.http.HttpResponse
 
 class HttpWebClient {
 
-	def handleRequest = { HttpRequest request, readTimeout = 15_000, connectTimeout = 15_000 ->
+	def handleRequest = { HttpRequest request, readTimeout = 15_000, connectTimeout = 15_000, followRedirects = false ->
 		assert request != null
+		
+		HttpURLConnection.setFollowRedirects followRedirects
+		HttpsURLConnection.setFollowRedirects followRedirects
 
 		request.with {
 			def strUrl = new StringBuilder(baseUrl).append((port ? ":${port}" : "")).append(path)
@@ -47,6 +50,7 @@ class HttpWebClient {
 
 			response.with {
 				httpResponseCode = connection.getResponseCode()
+				responseMessage = connection.getResponseMessage()
 				headers = connection.getHeaderFields()
 
 				def inputStream = connection.getErrorStream()
