@@ -4,11 +4,11 @@ Groovy based HTTP Web Client, with no fancy features, just pure Groovy and Java.
 ## Example Usage
 
 ```
-@Grab(group = 'org.github.nathandelane.http', module = 'groovy-http-client', version = '0.1-SNAPSHOT')
+@Grab(group = 'com.github.nathandelane.http', module = 'groovy-http-client', version = '0.1-SNAPSHOT')
 
-import org.github.nathandelane.http.HttpWebClient
-import org.github.nathandelane.http.HttpRequest
-import org.github.nathandelane.http.HttpResponse
+import com.github.nathandelane.http.HttpWebClient
+import com.github.nathandelane.http.HttpRequest
+import com.github.nathandelane.http.HttpResponse
 
 def client = {
     httpMethod, baseUrl, port, path, requestBody = '', headers = [:] ->

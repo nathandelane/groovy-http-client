@@ -1,8 +1,8 @@
-package org.github.nathandelane.http
+package com.github.nathandelane.http
 
 import javax.net.ssl.HttpsURLConnection
-import org.github.nathandelane.http.HttpRequest
-import org.github.nathandelane.http.HttpResponse
+import com.github.nathandelane.http.HttpRequest
+import com.github.nathandelane.http.HttpResponse
 
 class HttpWebClient {
 

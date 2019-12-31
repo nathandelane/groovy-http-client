@@ -1,4 +1,4 @@
-package org.github.nathandelane.http
+package com.github.nathandelane.http
 
 import groovy.transform.ToString
 

@@ -1,7 +1,7 @@
-package org.github.nathandelane.http
+package com.github.nathandelane.http
 
 import spock.lang.*
-import org.github.nathandelane.http.HttpRequest
+import com.github.nathandelane.http.HttpRequest
 
 class HttpRequestSpec extends Specification {
 
